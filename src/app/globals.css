@@ -13,5 +13,13 @@
   padding: 0;
   margin: 0;
   font-family: var(--font-inter);
+  scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--preto);
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  color: var(--branco);
+}
