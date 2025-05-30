@@ -30,7 +30,8 @@ const Menu = () => {
 
     return (
         <nav className={styles.nav}>
-            <div className={styles.menuDesktop} ref={menuRef}>
+            <span className={styles.logo}></span>
+            <div className={styles.menuDesktop}>
                 {menuItems.map((item) => (
                     <Link
                         key={item.path}
@@ -44,6 +45,28 @@ const Menu = () => {
                     </Link>
                 ))}
             </div>
+            <button
+                className={`${styles.menuButton} ${isOpen ? styles.open : ''}`}
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Abrir menu"
+            >
+                <span className={styles.hamburger}></span>
+                <span className={styles.hamburger}></span>
+            </button>
+            {isOpen && (
+                <div className={styles.menuMobile}>
+                    {menuItems.map((item) => (
+                        <Link
+                            key={item.path}
+                            href={item.path}
+                            className={styles.menuItem}
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                </div>
+            )}
         </nav>
     );
 };

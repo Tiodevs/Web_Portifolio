@@ -1,9 +1,15 @@
 
 
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter, Manrope, Sora } from "next/font/google";
 import "./globals.css";
-import Menu from "./components/Menu";
+import Menu from "./components/Menu"
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+});
+
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
@@ -25,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={`${manrope.className} ${inter.className}`}  suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body className={`${manrope.className} ${inter.className} ${sora.className}`}>
         <Menu />
         {children}
       </body>
