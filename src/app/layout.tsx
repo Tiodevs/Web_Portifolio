@@ -1,5 +1,3 @@
-
-
 import type { Metadata } from "next";
 import { Inter, Manrope, Sora } from "next/font/google";
 import "./globals.css";
@@ -24,6 +22,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Portifolio 2025",
   description: "O meu portifolio 2025",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
