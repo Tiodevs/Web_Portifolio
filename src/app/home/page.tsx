@@ -45,7 +45,7 @@ export default function Home() {
               title="Site de links"
               subtitle="2025 - Full Stack"
               description="Desenvolvi um site de links para um a ASSUMTEK, com um design moderno e responsivo. O site foi criado com Next.js e node.js, uma interface de adiministração para gerenciar os links e um painel de controle para gerenciar o site."
-              image="/projcts/02/capa01.png"
+              image="/projcts/02/Capa01.png"
               link="/projetos/02"
               linksgit="/"
             />

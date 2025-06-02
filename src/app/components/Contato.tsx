@@ -13,7 +13,7 @@ export function Contato({ email, linkedin, instagram, copyright }: ContatoProps)
     <div className={styles.contato}>
       <div className={styles.imgFooter}>
         <Image 
-          src="/Me2.png" 
+          src="/me2.png" 
           alt="Foto do felipe o dono do portifolio" 
           width={429} 
           height={323} 

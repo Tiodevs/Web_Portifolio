@@ -10,7 +10,7 @@ export default function Home() {
       <div className={styles.projects}>
         <div className={styles.project}>
           <div className={styles.projectCapa}>
-            <img src="/projcts/01/capa02.png" alt="Capa do projeto" />
+            <img src="/projcts/01/Capa02.png" alt="Capa do projeto" />
           </div>
           <h2 className={styles.projectsTitle}>IA CHAT</h2>
           <p className={styles.projectsDescription}>
@@ -51,9 +51,9 @@ export default function Home() {
             </div>
 
             <div className={styles.projectsContainerTelas}>
-                <img src="/projcts/01/tela01.png" alt="Tela do projeto" />
-                <img src="/projcts/01/tela02.png" alt="Tela do projeto" />
-                <img src="/projcts/01/tela03.png" alt="Tela do projeto" />
+                <img src="/projcts/01/Tela01.png" alt="Tela do projeto" />
+                <img src="/projcts/01/Tela02.png" alt="Tela do projeto" />
+                <img src="/projcts/01/Tela03.png" alt="Tela do projeto" />
             </div>
           </div>
         </div>
