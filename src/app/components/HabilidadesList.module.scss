@@ -27,6 +27,12 @@
             font-family: 'Manrope', sans-serif;
             text-transform: uppercase;
             margin-bottom:5px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: var(--cinza2);
+                color: var(--branco);
+            }
         }
 
         .habilidadeDestaque {

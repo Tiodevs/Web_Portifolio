@@ -4,6 +4,7 @@ import Image from "next/image";
 import ProjectCard from './components/ProjectCard';
 import { HabilidadesList } from './components/HabilidadesList';
 import { ExperienciaItem } from './components/ExperienciaItem';
+import { Contato } from './components/Contato';
 
 export default function Home() {
   return (
@@ -144,6 +145,15 @@ export default function Home() {
           />
         </div>
       </div>
+
+      <Contato
+        email="santospefelipe@gmail.com"
+        linkedin="https://www.linkedin.com/in/felipe-santos-pe/"
+        instagram="https://www.instagram.com/felipe.santos.pe/"
+        copyright="© 2025 Felipe Santos"
+      />
+
+      
     </div>
   );
 }

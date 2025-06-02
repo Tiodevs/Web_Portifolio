@@ -13,7 +13,7 @@ const Menu = () => {
     const menuItems = [
         { name: 'Home', path: '/' },
         { name: 'Projetos', path: '/projetos' },
-        { name: 'Contato', path: '/contato' },
+        { name: 'Blog', path: '/blog' },
     ];
 
     useEffect(() => {

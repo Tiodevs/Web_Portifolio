@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import Menu from "./components/Menu"
+import { Contato } from "./components/Contato";
 
 const sora = Sora({
   subsets: ["latin"],
