@@ -1,0 +1,138 @@
+.card {
+  display: flex;
+  align-items: stretch;
+  background: var(--preto2);
+  border: 1px solid var(--cinza2);
+  border-radius: 18px;
+  padding: 50px;
+  gap: 2.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s;
+
+  img{
+    border-radius: 18px;
+    max-width: 60%;
+    object-fit: cover;
+  }
+
+  .icon{
+    width: 24px;
+    height: 24px;
+    max-width: 100%;
+    border-radius: 0px;
+  }
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.2rem;
+  min-height: 350px;
+  padding-right: 60px;
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.info h3 {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #b3b3b3;
+  font-weight: 500;
+}
+
+.info p {
+  color: #b3b3b3;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.buttonContainer{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.button {
+  margin-top: 1.2rem;
+  color: var(--branco);
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  border: 1px solid var(--branco);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+  align-self: flex-start;
+  &:hover {
+    background: var(--cinza2);
+    color: #fff;
+  }
+}
+
+.button2 {
+  margin-top: 1.2rem;
+  text-decoration: none;
+  margin-left: 3px;
+  transition: scale 0.2s;
+  &:hover{
+    scale: 1.05;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card{
+    flex-direction: column-reverse;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+
+    img{
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+}     
+
+
+@media (max-width: 700px) {
+  .card{
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .info h3{
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    font-size: 17px;
+    color: #b3b3b3;
+    font-weight: 500;
+  }
+
+  .info p{
+    font-size: 16px;
+    margin-bottom: 30px;  
+  }
+
+
+  .button2, .button{
+    margin-top: 0px;
+  }
+
+  
+
+}
