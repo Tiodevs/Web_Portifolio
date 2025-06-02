@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import ProjectCard from './components/ProjectCard';
 import { HabilidadesList } from './components/HabilidadesList';
+import { ExperienciaItem } from './components/ExperienciaItem';
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
         <div className={styles.text}>
           <h1>Olá, eu sou o Felipe</h1>
           <p>Sou um desenvolvedor Full Stack apaixonado por criar soluções digitais robustas, seguras e inteligentes. Utilizo tecnologias modernas — incluindo inteligência artificial — para desenvolver produtos que geram retorno financeiro e entregam experiências excepcionais ao usuário.</p>
+
+
+          <a className={styles.buttonheader} href="/cv25.pdf" download>Baixar currículo</a>
         </div>
       </div>
 
@@ -45,7 +49,7 @@ export default function Home() {
               linksgit="/"
             />
 
-            
+
           </div>
           <div className={styles.projectsButtonContainer}>
             <Link href="/projetos" className={styles.projectsButton}>Ver mais</Link>
@@ -56,7 +60,7 @@ export default function Home() {
       <div className={styles.habilidades}>
         <h2 className={styles.habilidadesTitle}>Habilidades</h2>
         <div className={styles.habilidadesContainer}>
-          <HabilidadesList 
+          <HabilidadesList
             titulo="Frontend"
             habilidades={[
               "HTML",
@@ -75,7 +79,7 @@ export default function Home() {
             ]}
             habilidadeDestaque="Next.js"
           />
-          <HabilidadesList 
+          <HabilidadesList
             titulo="Backend"
             habilidades={[
               "Node.js",
@@ -93,8 +97,8 @@ export default function Home() {
               "Desenvolvimento de IA",
             ]}
             habilidadeDestaque="Node.js"
-          />  
-          <HabilidadesList 
+          />
+          <HabilidadesList
             titulo="Soft skills"
             habilidades={[
               "Comunicação Clara e Eficiente",
@@ -107,7 +111,7 @@ export default function Home() {
             ]}
             habilidadeDestaque="Liderança e Tomada de Decisão"
           />
-          <HabilidadesList 
+          <HabilidadesList
             titulo="Outros"
             habilidades={[
               "Automações com n8n e make",
@@ -116,7 +120,28 @@ export default function Home() {
             ]}
             habilidadeDestaque="Metodologias ágeis"
           />
-          
+
+        </div>
+      </div>
+
+      <div className={styles.experiencias}>
+        <h2 className={styles.experienciasTitle}>Experiências</h2>
+        <div className={styles.experienciasContainer}>
+          <ExperienciaItem
+            titulo="Líder do time de Tech"
+            periodo="Assumtek / Jan 2025 — Atual"
+            descricao="Atuo como Desenvolvedor Full Stack na ASSUMTEK Education, liderando iniciativas de tecnologia aplicadas à educação. Participei do desenvolvimento de sites institucionais e soluções inovadoras como cartões NFC e assistentes com IA treinada em conteúdos internos. Estruturei automações no Zoho CRM e iniciei projetos de BI para apoiar decisões estratégicas. Também contribuo em eventos como o SAP FORWARD e na modernização de processos internos."
+          />
+          <ExperienciaItem
+            titulo="Serviço voluntario"
+            periodo="Jan 2023 — Jan 2025 "
+            descricao="Optei por fazer uma pausa na minha carreira para me dedicar integralmente a um programa de voluntariado, aplicando meus conhecimentos em tecnologia, fotografia, música e gestão para apoiar ONGs, hospitais e comunidades carentes. Durante esse período, participei de diversas iniciativas que buscam proporcionar inclusão, inovação e impacto social."
+          />
+          <ExperienciaItem
+            titulo="Professor de TI"
+            periodo="Jan 2022 — Jan 2023"
+            descricao="Optei por fazer uma pausa na minha carreira para me dedicar integralmente a um programa de voluntariado, aplicando meus conhecimentos em tecnologia, fotografia, música e gestão para apoiar ONGs, hospitais e comunidades carentes. Durante esse período, participei de diversas iniciativas que buscam proporcionar inclusão, inovação e impacto social."
+          />
         </div>
       </div>
     </div>

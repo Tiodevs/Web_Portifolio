@@ -1,0 +1,55 @@
+.experienciasItem {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  margin-bottom: 30px;
+
+  .experienciasItemheader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+
+    .experienciasItemtitle {
+      font-size: 25px;
+      font-weight: 500;
+      color: var(--branco);
+    }
+
+    .experienciasItemsubtitle {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--cinza);
+    }
+  }
+
+  .experienciasItemdescription {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--cinza);
+    text-align: start;
+    line-height: 1.5;
+  }
+} 
+
+@media (max-width: 950px) {
+  .experienciasItem {
+    .experienciasItemheader {
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+
+      .experienciasItemtitle {
+        font-size: 25px;
+      }
+
+      .experienciasItemsubtitle {
+        font-size: 15px;
+      }
+    }
+  }
+}
