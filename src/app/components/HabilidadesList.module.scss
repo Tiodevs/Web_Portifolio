@@ -35,3 +35,14 @@
         }
     }
 }
+
+@media (max-width: 700px) {
+    .habilidadesContainer {
+        .habilidadesList {
+            p {
+                padding: 13px 25px;
+                font-size: 14px;
+            }
+        }
+    }
+}

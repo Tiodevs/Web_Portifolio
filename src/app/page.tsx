@@ -90,14 +90,7 @@ export default function Home() {
               "CI/CD",
               "Git",
               "GitHub",
-              "Integrações com IA",
-              "Treinamento de IA",
-              "Testes automatizados",
-              "Testes unitários",
-              "Testes de integração",
-              "Testes de sistema",
-              "Testes de segurança",
-              "Testes de performance",
+              "Desenvolvimento de IA",
             ]}
             habilidadeDestaque="Node.js"
           />  
