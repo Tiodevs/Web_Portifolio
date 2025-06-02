@@ -28,6 +28,7 @@
             text-transform: uppercase;
             margin-bottom:5px;
             transition: all 0.3s ease;
+            cursor: pointer;
 
             &:hover {
                 background-color: var(--cinza2);
@@ -38,6 +39,11 @@
         .habilidadeDestaque {
             color: var(--branco);
             border: 1px solid var(--main);
+
+            &:hover {
+                background-color: var(--main);
+                color: var(--preto);
+            }
         }
     }
 }

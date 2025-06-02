@@ -26,10 +26,10 @@ export function Contato({ email, linkedin, instagram, copyright }: ContatoProps)
           <img src="/iconEmail.svg" alt="Meu email" /> 
           {email}
         </a>
-        <a href={linkedin} target="_blank">
+        <a href="https://www.linkedin.com/in/felipe-p-santos-a1a3b9207/" target="_blank">
           <img src="/iconLinkedin.svg" alt="Meu linkedin" />
         </a>
-        <a href={instagram} target="_blank">
+        <a href="https://www.instagram.com/somente_ofelipe/" target="_blank">
           <img src="/IconIntagram.svg" alt="Meu Intagram" />
         </a>
       </div>

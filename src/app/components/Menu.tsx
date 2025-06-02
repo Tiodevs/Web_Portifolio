@@ -11,9 +11,9 @@ const Menu = () => {
     const menuRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
     const menuItems = [
-        { name: 'Home', path: '/' },
+        { name: 'Home', path: '/home' },
         { name: 'Projetos', path: '/projetos' },
-        { name: 'Blog', path: '/blog' },
+        { name: 'Curriculo', path: '/cv25.pdf' },
     ];
 
     useEffect(() => {
@@ -38,7 +38,7 @@ const Menu = () => {
                         href={item.path}
                         className={
                             `${styles.menuItem} ` +
-                            (pathname === item.path ? styles.active : '')
+                            (pathname.startsWith(item.path) ? styles.active : '')
                         }
                     >
                         {item.name}
