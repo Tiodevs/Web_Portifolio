@@ -1,0 +1,37 @@
+.habilidadesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+
+    h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--cinza);
+        margin-bottom: 15px;
+    }
+
+    .habilidadesList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+
+        p {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cinza);
+            padding: 15px 30px;
+            border-radius: 100px;
+            border: 1.5px solid var(--cinza2);
+            font-family: 'Manrope', sans-serif;
+            text-transform: uppercase;
+            margin-bottom:5px;
+        }
+
+        .habilidadeDestaque {
+            color: var(--branco);
+            border: 1px solid var(--main);
+        }
+    }
+}

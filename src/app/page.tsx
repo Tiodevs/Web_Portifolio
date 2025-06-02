@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import Image from "next/image";
 import ProjectCard from './components/ProjectCard';
+import { HabilidadesList } from './components/HabilidadesList';
 
 export default function Home() {
   return (
@@ -43,7 +44,86 @@ export default function Home() {
               link="/"
               linksgit="/"
             />
+
+            
           </div>
+          <div className={styles.projectsButtonContainer}>
+            <Link href="/projetos" className={styles.projectsButton}>Ver mais</Link>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.habilidades}>
+        <h2 className={styles.habilidadesTitle}>Habilidades</h2>
+        <div className={styles.habilidadesContainer}>
+          <HabilidadesList 
+            titulo="Frontend"
+            habilidades={[
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "Typescript",
+              "React",
+              "Next.js",
+              "Figma",
+              "SCSS",
+              "Vercel",
+              "GSAP",
+              "Axios",
+              "NextAuth",
+              "SEO",
+            ]}
+            habilidadeDestaque="Next.js"
+          />
+          <HabilidadesList 
+            titulo="Backend"
+            habilidades={[
+              "Node.js",
+              "Express",
+              "Prisma",
+              "PostgreSQL",
+              "Railway",
+              "Supabase",
+              "Yup",
+              "Docker",
+              "AWS",
+              "CI/CD",
+              "Git",
+              "GitHub",
+              "Integrações com IA",
+              "Treinamento de IA",
+              "Testes automatizados",
+              "Testes unitários",
+              "Testes de integração",
+              "Testes de sistema",
+              "Testes de segurança",
+              "Testes de performance",
+            ]}
+            habilidadeDestaque="Node.js"
+          />  
+          <HabilidadesList 
+            titulo="Soft skills"
+            habilidades={[
+              "Comunicação Clara e Eficiente",
+              "Pensamento Analítico",
+              "Liderança e Tomada de Decisão",
+              "Adaptabilidade",
+              "Escuta Ativa e Empatia",
+              "Gestão de Tempo e Prioridades",
+              "Pensamento empreendedor",
+            ]}
+            habilidadeDestaque="Liderança e Tomada de Decisão"
+          />
+          <HabilidadesList 
+            titulo="Outros"
+            habilidades={[
+              "Automações com n8n e make",
+              "sap",
+              "Metodologias ágeis",
+            ]}
+            habilidadeDestaque="Metodologias ágeis"
+          />
+          
         </div>
       </div>
     </div>
