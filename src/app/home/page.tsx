@@ -5,6 +5,7 @@ import ProjectCard from '../components/ProjectCard';
 import { HabilidadesList } from '../components/HabilidadesList';
 import { ExperienciaItem } from '../components/ExperienciaItem';
 import { Contato } from '../components/Contato';
+import { CertificadoItem } from '../components/CertificadoItem';
 
 export default function Home() {
   return (
@@ -146,6 +147,64 @@ export default function Home() {
         </div>
       </div>
 
+      <div className={styles.educacao}>
+        <h2 className={styles.educacaoTitle}>Educação</h2>
+
+        <div className={styles.educacaoContainer}>
+          <div className={styles.educacaoCategoria}>
+            <h3 className={styles.categoriaTitle}>Formação Acadêmica</h3>
+            <div className={styles.categoriaContent}>
+              <CertificadoItem
+                titulo="Faculdade de ADS - Análise e Desenvolvimento de Sistemas"
+                descricao="Atualmente cursando Análise e Desenvolvimento de Sistemas na Universidade Estácio de Sá, com previsão de conclusão o segundo semestre de 2025. Estou aprofundando meus conhecimentos em programação, desenvolvimento web e sistemas, além de aprender sobre IA e desenvolvimento de software."
+              />
+            </div>
+          </div>
+
+          <div className={styles.educacaoCategoria}>
+            <h3 className={styles.categoriaTitle}>Cursos em Andamento</h3>
+            <div className={styles.categoriaContent}>
+              <CertificadoItem
+                titulo="Programa Desenvolve | Desenvolvimento de Software - Grupo Boticário"
+                descricao="Atualmente participando do Desenvolve, o programa de aceleração de carreiras em tecnologia do Grupo Boticário. Fui selecionado para esta trilha de desenvolvimento de software, que visa formar os futuros especialistas da companhia através de uma imersão em projetos reais, tecnologias de ponta e na cultura de uma das maiores empresas de beleza e tecnologia do mundo."
+                imagem="/certificados/desenvolve.png"
+              />
+            </div>
+          </div>
+
+          <div className={styles.educacaoCategoria}>
+            <h3 className={styles.categoriaTitle}>Cursos Concluídos</h3>
+            <div className={styles.categoriaContent}>
+              <CertificadoItem
+                titulo="Harvard University: CS50x Introdução à Ciência da Computação"
+                descricao="Orgulhoso por ter concluído o CS50x de Harvard, uma das mais desafiadoras e gratificantes introduções à ciência da computação. O curso me levou de conceitos fundamentais, como o sistema binário e algoritmos, a projetos práticos de desenvolvimento de software e web. Finalizei com sucesso todos os trabalhos propostos."
+                imagem="/certificados/CS50x.png"
+              />
+              <CertificadoItem
+                titulo="Curso do Google - Análise de Dados"
+                descricao="Este programa intensivo, ministrado por especialistas do Google, me proporcionou uma base sólida no mundo da análise de dados. Aprendi a identificar o ciclo de vida dos dados, a importância da tomada de decisões baseada em dados e as principais ferramentas e metodologias utilizadas por analistas de dados no dia a dia."
+                imagem="/certificados/googDados.jpeg"
+              />
+              <CertificadoItem
+                titulo="Santander - Liderança e Performance"
+                descricao="O treinamento de 8 horas explorou como a estratégia, a tecnologia e o fator humano se unem para criar equipes vencedoras. Adquiri conhecimentos sobre como aplicar essa mentalidade de alta performance para otimizar processos, motivar equipes e acelerar resultados no ambiente de trabalho."
+                imagem="/certificados/SantanderLidereança.jpg"
+              />
+              <CertificadoItem
+                titulo="AWS Academy Graduate - Cloud Foundations"
+                descricao="Este programa me proporcionou um entendimento detalhado dos conceitos da nuvem AWS, incluindo sua infraestrutura global, serviços essenciais, segurança, arquitetura e modelos de precificação. Adquiri o conhecimento fundamental para articular os benefícios da nuvem AWS e tomar decisões informadas sobre soluções baseadas em seus principais serviços."
+                imagem="/certificados/aws.png"
+              />
+              <CertificadoItem
+                titulo="Matheus Fraga - Full Stack, Node e React"
+                descricao="Finalizei com sucesso o curso Projeto Completo da Udemy, que me proporcionou uma imersão prática no desenvolvimento de software. Durante as 25.5 horas de curso, apliquei conceitos de back-end, front-end e mobile para construir uma aplicação funcional."
+                imagem="/certificados/MatheusFraga-React-Next-Node-ReactNative.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Contato
         email="santospefelipe@gmail.com"
         linkedin="https://www.linkedin.com/in/felipe-santos-pe/"
@@ -153,7 +212,7 @@ export default function Home() {
         copyright="© 2025 Felipe Santos"
       />
 
-      
+
     </div>
   );
 }

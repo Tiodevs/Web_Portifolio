@@ -147,12 +147,10 @@
 }
 
 .experiencias {
+  padding: 2rem 0 4rem 0;
   width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  margin: 50px 0 100px 0;
+  max-width: 1200px;
+  margin: 0 auto;
 
   .experienciasTitle {
     font-size: 40px;
@@ -163,7 +161,70 @@
 
 }
 
+.certificados {
+  padding: 4rem 0 8rem 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.certificadosTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.certificadosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.educacao {
+  padding: 4rem 0 8rem 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.educacaoTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.educacaoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 0 1rem;
+}
+
+.educacaoCategoria {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.categoriaTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.categoriaContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
 @media (max-width: 1200px) {
   .page {
@@ -230,5 +291,41 @@
       font-size: 17px;
       margin-bottom: 30px;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .certificados {
+    padding: 2rem 0;
+  }
+
+  .certificadosTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .certificadosContainer {
+    gap: 1.5rem;
+  }
+
+  .educacao {
+    padding: 2rem 0 4rem 0;
+  }
+
+  .educacaoTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .educacaoContainer {
+    gap: 3rem;
+  }
+
+  .categoriaTitle {
+    font-size: 1.75rem;
+  }
+
+  .categoriaContent {
+    gap: 1.5rem;
   }
 }
