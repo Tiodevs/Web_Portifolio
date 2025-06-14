@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 import styles from "./page.module.css";
 import Image from "next/image";
@@ -7,23 +9,305 @@ import { ExperienciaItem } from '../components/ExperienciaItem';
 import { Contato } from '../components/Contato';
 import { CertificadoItem } from '../components/CertificadoItem';
 
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+
+// Função para renderizar texto circular
+function CircularText({
+  text,
+  radius = 18,
+  rotate = 0,
+  fontSize = 10,
+  color = 'var(--main)'
+}: {
+  text: string,
+  radius?: number,
+  rotate?: number,
+  fontSize?: number,
+  color?: string
+}) {
+  const chars = text.split('');
+  const degreeStep = 360 / chars.length;
+  const offsetAngle = -30 - ((chars.length / 2) * degreeStep);
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        width: `${radius * 1}px`,
+        height: `${radius * 1}px`,
+        left: '50%',
+        top: '50%',
+        pointerEvents: 'none',
+        transform: `translate(-50%, -50%) rotate(${rotate + offsetAngle}deg)`,
+        zIndex: 1,
+      }}
+    >
+      {chars.map((char: string, i: number) => (
+        <span
+          key={i}
+          style={{
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            transform: `rotate(${i * degreeStep}deg) translate(${radius}px) rotate(-260deg)`,
+            transformOrigin: '0 0',
+            fontSize: `${fontSize}px`,
+            color: color,
+            fontWeight: 'bold',
+            letterSpacing: '1px',
+            textTransform: 'uppercase',
+            userSelect: 'none',
+            fontFamily: 'inherit',
+          }}
+        >
+          {char}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const buttonRef = useRef<HTMLAnchorElement>(null);
+  const buttonTextRef = useRef<HTMLSpanElement>(null);
+  const buttonTextRef2 = useRef<HTMLSpanElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const [showCircleText, setShowCircleText] = useState(false);
+  const [circleTextRotation, setCircleTextRotation] = useState(0);
+  const circleTextInterval = useRef<NodeJS.Timeout | null>(null);
+  const [showCustomCursor, setShowCustomCursor] = useState(true);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    tl.from(headerRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 0.3,
+      ease: "power2.out"
+    })
+    .from(imageRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out"
+    }, "-=0.5")
+    .from(titleRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out"
+    }, "-=0.5")
+    .from(textRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out"
+    }, "-=0.5")
+    .from(buttonRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      clearProps: "all"
+    }, "-=0.9");
+
+    // Configuração inicial do texto de substituição
+    if (buttonTextRef2.current) {
+      gsap.set(buttonTextRef2.current, {
+        y: '100%',
+        rotationX: -90,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        opacity: 1,
+        pointerEvents: 'none'
+      });
+    }
+
+    // Adiciona a animação de hover
+    if (buttonRef.current && buttonTextRef.current && buttonTextRef2.current) {
+      const buttonTl = gsap.timeline({ paused: true });
+
+      buttonTl.to(buttonTextRef.current, {
+        duration: 0.5,
+        y: '-100%',
+        rotationX: 90,
+        ease: 'power2.inOut'
+      })
+      .to(buttonTextRef2.current, {
+        duration: 0.5,
+        y: '0%',
+        rotationX: 0,
+        ease: 'power2.inOut'
+      }, '<');
+
+      buttonRef.current.addEventListener('mouseenter', () => {
+        buttonTl.play();
+      });
+
+      buttonRef.current.addEventListener('mouseleave', () => {
+        buttonTl.reverse();
+      });
+    }
+
+    // Detecta touch ou tela pequena
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isSmallScreen = window.innerWidth < 768;
+    if (isTouch || isSmallScreen) {
+      setShowCustomCursor(false);
+      document.body.style.cursor = 'auto';
+      return;
+    }
+    setShowCustomCursor(true);
+
+    // Cursor personalizado
+    const cursor = cursorRef.current;
+    if (cursor) {
+      document.body.style.cursor = 'none';
+
+      const style = document.createElement('style');
+      style.textContent = `
+        a, button, [role="button"], input, select, textarea {
+          cursor: none !important;
+        }
+        * {
+          cursor: none !important;
+        }
+      `;
+      document.head.appendChild(style);
+
+      const moveCursor = (e: MouseEvent) => {
+        gsap.to(cursor, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.1,
+          ease: "power2.out"
+        });
+      };
+
+      const handleMouseEnter = () => {
+        gsap.to(cursor, {
+          scale: 1.5,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        setShowCircleText(true);
+        // Inicia rotação animada
+        if (!circleTextInterval.current) {
+          circleTextInterval.current = setInterval(() => {
+            setCircleTextRotation(r => r + 2);
+          }, 15);
+        }
+      };
+
+      const handleMouseLeave = () => {
+        gsap.to(cursor, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        setShowCircleText(false);
+        // Para rotação
+        if (circleTextInterval.current) {
+          clearInterval(circleTextInterval.current);
+          circleTextInterval.current = null;
+        }
+        setCircleTextRotation(0);
+      };
+
+      // Adiciona os event listeners
+      window.addEventListener('mousemove', moveCursor);
+      
+      // Adiciona o efeito hover em todos os elementos clicáveis
+      const clickableElements = document.querySelectorAll('a, button, [role="button"]');
+      clickableElements.forEach(element => {
+        element.addEventListener('mouseenter', handleMouseEnter);
+        element.addEventListener('mouseleave', handleMouseLeave);
+      });
+
+      // Cleanup
+      return () => {
+        window.removeEventListener('mousemove', moveCursor);
+        clickableElements.forEach(element => {
+          element.removeEventListener('mouseenter', handleMouseEnter);
+          element.removeEventListener('mouseleave', handleMouseLeave);
+        });
+        document.body.style.cursor = 'auto';
+        document.head.removeChild(style);
+        if (circleTextInterval.current) {
+          clearInterval(circleTextInterval.current);
+        }
+      };
+    }
+  }, []);
+  
   return (
     <div className={styles.page}>
-      <div className={styles.header}>
-        <Image
-          src="/Me.png"
-          alt="Foto do felipe o dono do portifolio"
-          width={604}
-          height={324}
-          quality={100}
-        />
+      {showCustomCursor && (
+        <div 
+          ref={cursorRef}
+          style={{
+            position: 'fixed',
+            width: '30px',
+            height: '30px',
+            backgroundColor: 'var(--preto2)',
+            border: '1.5px solid var(--main)',
+            borderRadius: '50%',
+            pointerEvents: 'none',
+            zIndex: 9999,
+            transform: 'translate(-50%, -50%)',
+            left: 0,
+            top: 0,
+            transition: 'background 0.2s',
+          }}
+        >
+          {showCircleText && (
+            <CircularText text={' APERTE • AGORA •'} radius={24} fontSize={7} color={'var(--branco)'} rotate={circleTextRotation} />
+          )}
+        </div>
+      )}
+      <div className={styles.header} ref={headerRef}>
+        <div ref={imageRef} className={styles.image}>
+          <Image
+            src="/Me.png"
+            alt="Foto do felipe o dono do portifolio"
+            width={604}
+            height={324}
+            quality={100}
+          />
+        </div>
         <div className={styles.text}>
-          <h1>Olá, eu sou o Felipe</h1>
-          <p>Sou um desenvolvedor Full Stack apaixonado por criar soluções digitais robustas, seguras e inteligentes. Utilizo tecnologias modernas — incluindo inteligência artificial — para desenvolver produtos que geram retorno financeiro e entregam experiências excepcionais ao usuário.</p>
+          <h1 ref={titleRef}>Olá, eu sou o Felipe</h1>
+          <p ref={textRef}>Sou um desenvolvedor Full Stack apaixonado por criar soluções digitais robustas, seguras e inteligentes. Utilizo tecnologias modernas — incluindo inteligência artificial — para desenvolver produtos que geram retorno financeiro e entregam experiências excepcionais ao usuário.</p>
 
-
-          <a className={styles.buttonheader} href="/cv25.pdf" download>Baixar currículo</a>
+          <a 
+            ref={buttonRef} 
+            className={styles.buttonheader} 
+            href="/cv25.pdf" 
+            download
+          >
+            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+              <span 
+                className={styles.buttonText1}
+                ref={buttonTextRef}
+              >
+                Baixar currículo
+              </span>
+              <span 
+                ref={buttonTextRef2}
+                className={styles.buttonText2}
+              >
+                Obrigado :D
+              </span>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -211,8 +495,6 @@ export default function Home() {
         instagram="https://www.instagram.com/felipe.santos.pe/"
         copyright="© 2025 Felipe Santos"
       />
-
-
     </div>
   );
 }

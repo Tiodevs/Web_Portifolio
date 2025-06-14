@@ -2,14 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import gsap from 'gsap';
 import styles from './Menu.module.scss';
+import gsap from 'gsap';
 import { usePathname } from 'next/navigation';
 
-const Menu = () => {
+export function Menu() {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
+    
     const menuItems = [
         { name: 'Home', path: '/home' },
         { name: 'Projetos', path: '/projetos' },
@@ -17,20 +18,17 @@ const Menu = () => {
     ];
 
     useEffect(() => {
-        if (menuRef.current) {
-            gsap.from(menuRef.current.children, {
-                y: -20,
-                opacity: 0,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: 'power2.out',
-            });
-        }
+        // Animação simples: menu desliza de cima para baixo
+        gsap.from(menuRef.current, {
+            y: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
     }, []);
 
     return (
-        <nav className={styles.nav}>
-            <span className={styles.logo}></span>
+        <nav ref={menuRef} className={styles.nav}>
             <div className={styles.menuDesktop}>
                 {menuItems.map((item) => (
                     <Link
@@ -69,6 +67,4 @@ const Menu = () => {
             )}
         </nav>
     );
-};
-
-export default Menu; 
+}

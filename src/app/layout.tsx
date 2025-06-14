@@ -1,27 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Manrope, Sora } from "next/font/google";
+import { Manrope, Inter, Sora } from "next/font/google";
 import "./globals.css";
-import Menu from "./components/Menu"
+import { Menu } from "./components/Menu";
 import { Contato } from "./components/Contato";
 
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+const manrope = Manrope({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
+const sora = Sora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portifolio 2025",
-  description: "O meu portifolio 2025",
+  title: "Felipe Santos - Desenvolvedor Full Stack",
+  description: "Portfólio de Felipe Santos, desenvolvedor Full Stack especializado em React, Node.js e desenvolvimento web moderno.",
   icons: {
     icon: '/favicon.svg',
   },
