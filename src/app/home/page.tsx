@@ -14,6 +14,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { useLoadingState } from "../../hooks/useLoadingState";
+import { LINKEDIN_PROFILE_URL } from "@/lib/social";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,7 +76,7 @@ export default function Home() {
         clearProps: "all",
       }, "-=0.4");
 
-    // Configurações do botão CV
+    // Configurações do botão do hero (LinkedIn)
     gsap.set(buttonTextRef2.current, {
       y: '100%',
       rotationX: -90,
@@ -338,27 +339,28 @@ export default function Home() {
           />
         </div>
         <div className={styles.text}>
-          <h1 ref={titleRef}>Automação em escala industrial</h1>
-          <p ref={textRef}>Especialista em unir desenvolvimento Full Stack à inteligência de processos no Grupo Boticário. Crio soluções que conectam a fábrica ao digital para maximizar a eficiência produtiva.</p>
+          <h1 ref={titleRef}>Engenheiro de Software Full Stack</h1>
+          <p ref={textRef}>Web, cloud, IA e automação — de Curitiba para produtos que escalam. Construo aplicações performáticas, integro IA no fluxo de trabalho com foco em código limpo e seguro, e lidero entregas do desenho à operação com impacto mensurável no negócio.</p>
 
           <a
             ref={buttonRef}
             className={styles.buttonheader}
-            href="/CV2026Felipe.pdf"
-            download="CV2026Felipe.pdf"
+            href={LINKEDIN_PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <div style={{ position: 'relative', width: '100%', height: '100%' }}>
               <span
                 className={styles.buttonText1}
                 ref={buttonTextRef}
               >
-                Baixar currículo
+                LinkedIn
               </span>
               <span
                 ref={buttonTextRef2}
                 className={styles.buttonText2}
               >
-                Baixar agora
+                Ver perfil
               </span>
             </div>
           </a>
@@ -370,7 +372,7 @@ export default function Home() {
           <div ref={projectsHeaderRef} className={styles.projectsHeader}>
             <h2 className={styles.projectsTitle}>Meus projetos</h2>
             <p className={styles.projectsDescription}>
-              Aqui está um pouco dos meus projetos mais recentes. Cada um deles reflete meu foco em soluções centradas no usuário e meu compromisso com a excelência em performance, segurança e resultados reais para o negócio.
+              Alguns dos projetos mais recentes — sempre com foco em UX, performance, segurança e resultados que aparecem nas métricas, alinhados ao que faço hoje em produto, dados e IA aplicada.
             </p>
           </div>
           <div className={styles.projectsContainer}>
@@ -399,7 +401,7 @@ export default function Home() {
         <h2 className={styles.habilidadesTitle}>Habilidades</h2>
         <div className={styles.habilidadesContainer}>
           <HabilidadesList
-            titulo="Frontend"
+            titulo="Front-end"
             habilidades={[
               { nome: "HTML", imagem: "/icons/html5-original.svg", altImagem: "HTML5" },
               { nome: "CSS", imagem: "/icons/css3-original.svg", altImagem: "CSS3" },
@@ -407,54 +409,68 @@ export default function Home() {
               { nome: "TypeScript", imagem: "/icons/typescript-original.svg", altImagem: "TypeScript" },
               { nome: "React", imagem: "/icons/react-original.svg", altImagem: "React" },
               { nome: "Next.js", imagem: "/icons/nextjs-original.svg", altImagem: "Next.js" },
-              { nome: "Figma", imagem: "/icons/figma-original.svg", altImagem: "Figma" },
-              { nome: "Vercel", imagem: "/icons/vercel-original.svg", altImagem: "Vercel" },
-              { nome: "Axios", imagem: "/icons/axios-plain.svg", altImagem: "Axios" },
+              "Tailwind CSS",
               "GSAP",
-              "SEO",
+              { nome: "Figma", imagem: "/icons/figma-original.svg", altImagem: "Figma" },
             ]}
             habilidadeDestaque="Next.js"
           />
           <HabilidadesList
-            titulo="Backend"
+            titulo="Back-end & APIs"
             habilidades={[
               { nome: "Node.js", imagem: "/icons/nodejs-original.svg", altImagem: "Node.js" },
               { nome: "Express", imagem: "/icons/express-original.svg", altImagem: "Express" },
               { nome: "Prisma", imagem: "/icons/prisma-original.svg", altImagem: "Prisma" },
               { nome: "PostgreSQL", imagem: "/icons/postgresql-original.svg", altImagem: "PostgreSQL" },
-              { nome: "Railway", imagem: "/icons/railway-original.svg", altImagem: "Railway" },
+              "MongoDB / DocumentDB",
+              "APIs REST",
+              "Autenticação & SSO",
+              "DDD",
               { nome: "Git", imagem: "/iconGit.svg", altImagem: "Git" },
               { nome: "GitHub", imagem: "/iconGit.svg", altImagem: "GitHub" },
-              { nome: "Supabase", imagem: "/icons/supabase-original.svg", altImagem: "Supabase" },
-              { nome: "Docker", imagem: "/icons/docker-original.svg", altImagem: "Docker" },
-              "Yup",
-              "AWS",
-              "CI/CD",
-              "Desenvolvimento de IA",
             ]}
             habilidadeDestaque="Node.js"
           />
           <HabilidadesList
-            titulo="Soft skills"
+            titulo="Cloud, DevOps & dados"
             habilidades={[
-              "Comunicação Clara e Eficiente",
-              "Pensamento Analítico",
-              "Liderança e Tomada de Decisão",
-              "Adaptabilidade",
-              "Escuta Ativa e Empatia",
-              "Gestão de Tempo e Prioridades",
-              "Pensamento empreendedor",
+              "AWS (S3, SQS, Lambda, EKS)",
+              { nome: "Docker", imagem: "/icons/docker-original.svg", altImagem: "Docker" },
+              "CI/CD & Git Flow",
+              { nome: "Vercel", imagem: "/icons/vercel-original.svg", altImagem: "Vercel" },
+              { nome: "Railway", imagem: "/icons/railway-original.svg", altImagem: "Railway" },
+              "ArgoCD",
+              "New Relic",
+              "Python (dados)",
+              "Power BI",
             ]}
-            habilidadeDestaque="Liderança e Tomada de Decisão"
+            habilidadeDestaque="AWS (S3, SQS, Lambda, EKS)"
           />
           <HabilidadesList
-            titulo="Outros"
+            titulo="Soft skills"
             habilidades={[
-              "Automações com n8n e make",
-              "sap",
-              "Metodologias ágeis",
+              "Comunicação clara",
+              "Pensamento analítico",
+              "Liderança técnica",
+              "Adaptabilidade",
+              "Escuta ativa e empatia",
+              "Gestão de tempo e prioridades",
+              "Mentalidade de produto",
             ]}
-            habilidadeDestaque="Metodologias ágeis"
+            habilidadeDestaque="Liderança técnica"
+          />
+          <HabilidadesList
+            titulo="IA, automação & processos"
+            habilidades={[
+              "LangChain & RAG",
+              "OpenAI SDK & Gemini",
+              "Prompt engineering",
+              "Gestão de memória / contexto",
+              "GitHub Copilot",
+              "Make & n8n",
+              "Scrum",
+            ]}
+            habilidadeDestaque="LangChain & RAG"
           />
 
         </div>
@@ -465,21 +481,22 @@ export default function Home() {
         <div className={styles.timelineContainer}>
           <ExperienciaItem
             empresa="Grupo Boticário"
-            cargo="Desenvolvedor I - Tech Industrial AMP"
+            cargo="Engenheiro de Software Pleno"
             periodo="Jan 2026 — Atual"
-            descricao="Desenvolvimento de automações industriais integrando sistemas de produção à plataforma digital. Criação de soluções full-stack com Node.js, Next.js e bancos de dados relacionais para otimizar processos produtivos, garantindo eficiência, escalabilidade e segurança nas operações da fábrica."
+            descricao="Desenvolvimento Full Stack em PWA no App Super (gestão de mais de 2.000 colaboradores): decisões técnicas em React, Node.js, MongoDB/DocumentDB e SSO. Integração com DevOps para deploy e monitoramento na AWS (EKS, S3, ArgoCD, New Relic). A solução substituiu dezenas de planilhas manuais (horas, folgas, matriz de habilidades), com ganhos de cerca de 20% na produtividade dos coordenadores fabris e cerca de 10% menos tempo em alocação de equipes."
           />
           <ExperienciaItem
-            empresa="ASSUMTEK Education"
-            cargo="Desenvolvedor Full Stack Pleno"
+            empresa="ASSUMTEK"
+            cargo="Desenvolvedor Full Stack Pleno & Tech Lead"
             periodo="Jan 2025 — Jan 2026"
-            descricao="Liderança no desenvolvimento completo de um SaaS com IA (RAG) para otimizar o fluxo de consultores SAP, utilizando Node.js, React/Next e Prisma. Criação de automações MarTech complexas integrando Meta, Make, n8n, Active Campaign e HubSpot CRM, desenvolvendo BIs para diversos setores. Desenvolvimento full-stack do sistema interno de RH e front-end do painel de backoffice. Atuação em metodologia ágil (Scrum) com gestão de PRs e colaboração multidisciplinar."
+            descricao="Produto de RH do zero (Node, PostgreSQL, Next, Vercel, Railway): jornada PJ, folha, regras de negócio, aprovações e cálculo dinâmico de remuneração — redução de cerca de 70% no tempo operacional do RH no fechamento da folha. Liderança técnica: arquitetura, demandas e cerimônias 1:1. MarTech e APIs com Node, n8n e Make (Meta Ads, CRMs, base interna). Pipelines de dados com Node e Python alimentando Power BI para todos os setores e dashboards B2B."
           />
           <ExperienciaItem
-            empresa="Autônomo & Freelance"
-            cargo="Fundador & Consultor de Estratégia Digital"
-            periodo="Jan 2021 — Dez 2024"
-            descricao="Fundação de startup especializada em desenvolvimento de produtos e soluções digitais personalizadas. Liderança técnica e de produto, gerenciando projetos desde a concepção do MVP até implementação final. Foco em arquitetura de software e construção de aplicações web de alta performance."
+            empresa="Sentier"
+            cargo="Fundador & Desenvolvedor Full Stack"
+            periodo="Jan 2021 — Jan 2025"
+            descricao="Mais de 40 projetos B2B ponta a ponta: sistemas sob medida, landing pages, automações e BI. Destaque: plataforma SaaS multi-tenant para barbearias (agenda, folha, assinaturas, lembretes) com Next.js, Node, Prisma, AWS S3, Resend e Vercel — milhares de usuários cadastrados e economia de tempo estimada entre 17% e 20% na operação dos clientes."
+            isLast
           />
           
         </div>
@@ -492,49 +509,43 @@ export default function Home() {
           
 
           <div className={styles.educacaoCategoria}>
-            <h3 className={styles.categoriaTitle}>Cursos Concluídos</h3>
+            <h3 className={styles.categoriaTitle}>Formação e cursos</h3>
             <div className={styles.categoriaContent}>
               <CertificadoItem
-                titulo="Faculdade de ADS - Análise e Desenvolvimento de Sistemas"
-                descricao="Atualmente cursando Análise e Desenvolvimento de Sistemas na Universidade UNIFAEL, com previsão de conclusão o segundo semestre de 2025. Estou aprofundando meus conhecimentos em programação, desenvolvimento web e sistemas, além de aprender sobre IA e desenvolvimento de software."
+                titulo="FAEL — Análise e Desenvolvimento de Sistemas"
+                descricao="Graduação em Análise e Desenvolvimento de Sistemas (jan 2021 – dez 2025), com foco em programação, desenvolvimento web, sistemas e bases para atuar com IA e software em ambientes corporativos."
                 index={1}
                 progresso={100}
               />
               <CertificadoItem
-                titulo="Harvard University: CS50x Introdução à Ciência da Computação"
-                descricao="Orgulhoso por ter concluído o CS50x de Harvard, uma das mais desafiadoras e gratificantes introduções à ciência da computação. O curso me levou de conceitos fundamentais, como o sistema binário e algoritmos, a projetos práticos de desenvolvimento de software e web. Finalizei com sucesso todos os trabalhos propostos."
-                imagem="/certificados/CS50x.png"
+                titulo="Grupo Boticário — Programa Desenvolve"
+                descricao="Programa intensivo em Full Stack (Node, React, Next) e IA, alinhado às práticas e stack usadas em produto de grande escala."
                 index={2}
-              />
-              <CertificadoItem
-                titulo="Curso do Google - Análise de Dados"
-                descricao="Este programa intensivo, ministrado por especialistas do Google, me proporcionou uma base sólida no mundo da análise de dados. Aprendi a identificar o ciclo de vida dos dados, a importância da tomada de decisões baseada em dados e as principais ferramentas e metodologias utilizadas por analistas de dados no dia a dia."
-                imagem="/certificados/googDados.jpeg"
-                index={3}
-              />
-              <CertificadoItem
-                titulo="Santander - Liderança e Performance"
-                descricao="O treinamento de 8 horas explorou como a estratégia, a tecnologia e o fator humano se unem para criar equipes vencedoras. Adquiri conhecimentos sobre como aplicar essa mentalidade de alta performance para otimizar processos, motivar equipes e acelerar resultados no ambiente de trabalho."
-                imagem="/certificados/SantanderLidereança.jpg"
-                index={4}
-              />
-              <CertificadoItem
-                titulo="AWS Academy Graduate - Cloud Foundations"
-                descricao="Este programa me proporcionou um entendimento detalhado dos conceitos da nuvem AWS, incluindo sua infraestrutura global, serviços essenciais, segurança, arquitetura e modelos de precificação. Adquiri o conhecimento fundamental para articular os benefícios da nuvem AWS e tomar decisões informadas sobre soluções baseadas em seus principais serviços."
-                imagem="/certificados/aws.png"
-                index={5}
-              />
-              <CertificadoItem
-                titulo="JStack"
-                descricao="Treinamento sobre SaaS, integração com inteligência artificial, React Native, TypeScript, Serverless Framework, AWS Lambda, AWS S3 e muito mais!"
-                index={6}
                 progresso={100}
               />
               <CertificadoItem
-                titulo="Matheus Fraga - Full Stack, Node e React"
-                descricao="Finalizei com sucesso o curso Projeto Completo da Udemy, que me proporcionou uma imersão prática no desenvolvimento de software. Durante as 25.5 horas de curso, apliquei conceitos de back-end, front-end e mobile para construir uma aplicação funcional."
-                imagem="/certificados/MatheusFraga-React-Next-Node-ReactNative.jpg"
-                index={7}
+                titulo="Harvard Business Education — Business Fundamentals"
+                descricao="Fundamentos de negócio para conectar entrega técnica a valor, priorização e visão de produto no ambiente corporativo."
+                index={3}
+                progresso={100}
+              />
+              <CertificadoItem
+                titulo="Google — Análise de Dados & BI"
+                descricao="Base sólida em ciclo de vida dos dados, tomada de decisão orientada a dados e ferramentas de análise e BI usadas no dia a dia."
+                imagem="/certificados/googDados.jpeg"
+                index={4}
+              />
+              <CertificadoItem
+                titulo="Harvard University — CS50x (Ciência da Computação)"
+                descricao="Introdução rigorosa à ciência da computação: de fundamentos e algoritmos a projetos práticos de software e web, com todos os trabalhos concluídos."
+                imagem="/certificados/CS50x.png"
+                index={5}
+              />
+              <CertificadoItem
+                titulo="AWS Academy — Cloud Foundations"
+                descricao="Conceitos de nuvem AWS: infraestrutura global, serviços essenciais, segurança, arquitetura e modelos de precificação para decisões informadas em cloud."
+                imagem="/certificados/aws.png"
+                index={6}
               />
             </div>
           </div>

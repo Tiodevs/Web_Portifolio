@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './Contato.module.scss';
+import { LINKEDIN_PROFILE_URL } from '@/lib/social';
 
 
 export function Contato() {
@@ -20,14 +21,14 @@ export function Contato() {
           <img src="/iconEmail.svg" alt="Meu email" /> 
           {"santospefelipe@gmail.com"}
         </a>
-        <a href="https://www.linkedin.com/in/felipe-p-santos-a1a3b9207/" target="_blank" >
+        <a href={LINKEDIN_PROFILE_URL} target="_blank" rel="noopener noreferrer">
           <img src="/iconLinkedin.svg" alt="Meu linkedin" />
         </a>
         <a href="https://www.instagram.com/somente_ofelipe/" target="_blank" >
           <img src="/IconIntagram.svg" alt="Meu Intagram" />
         </a>
       </div>
-      <p data-testid="contato-copyright">© 2025 Felipe Santos</p>
+      <p data-testid="contato-copyright">© 2026 Felipe Santos</p>
     </div>
   );
 } 
