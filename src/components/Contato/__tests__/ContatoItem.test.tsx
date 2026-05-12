@@ -31,7 +31,7 @@ describe('Componente Contato', () => {
     const linkLinkedin = screen.getByRole('link', { name: /meu linkedin/i });
     
     expect(linkLinkedin).toBeInTheDocument();
-    expect(linkLinkedin).toHaveAttribute('href', 'https://www.linkedin.com/in/felipepesantos/');
+    expect(linkLinkedin).toHaveAttribute('href', 'https://www.linkedin.com/in/felipe-p-santos-a1a3b9207/');
   });
   
   it('Deve renderizar o link para o Instagram com o href correto', () => {

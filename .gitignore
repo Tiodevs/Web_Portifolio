@@ -40,6 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
-
-/src/generated/prisma
+# artefatos gerados localmente
+src/generated/

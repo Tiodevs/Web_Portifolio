@@ -14,7 +14,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { useLoadingState } from "../../hooks/useLoadingState";
-import { LINKEDIN_PROFILE_URL } from "@/lib/social";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -76,7 +75,7 @@ export default function Home() {
         clearProps: "all",
       }, "-=0.4");
 
-    // Configurações do botão do hero (LinkedIn)
+    // Configurações do botão CV
     gsap.set(buttonTextRef2.current, {
       y: '100%',
       rotationX: -90,
@@ -345,22 +344,21 @@ export default function Home() {
           <a
             ref={buttonRef}
             className={styles.buttonheader}
-            href={LINKEDIN_PROFILE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/CV2026Felipe2.pdf"
+            download="CV2026Felipe2.pdf"
           >
             <div style={{ position: 'relative', width: '100%', height: '100%' }}>
               <span
                 className={styles.buttonText1}
                 ref={buttonTextRef}
               >
-                LinkedIn
+                Baixar currículo
               </span>
               <span
                 ref={buttonTextRef2}
                 className={styles.buttonText2}
               >
-                Ver perfil
+                Baixar agora
               </span>
             </div>
           </a>
