@@ -5,7 +5,6 @@ import styles from './Menu.module.scss';
 import gsap from 'gsap';
 import { usePathname } from 'next/navigation';
 import { useLoadingState } from '../../hooks/useLoadingState';
-import { LINKEDIN_PROFILE_URL } from '@/lib/social';
 
 export function Menu() {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +15,7 @@ export function Menu() {
     const menuItems = [
         { name: 'Home', path: '/home' },
         { name: 'Projetos', path: '/projetos' },
-        { name: 'LinkedIn', path: LINKEDIN_PROFILE_URL },
-        // { name: 'Blog', path: '/blog' },
+        { name: 'CV', path: '/CV2026Felipe2.pdf' },
     ];
 
     useEffect(() => {
@@ -34,7 +32,8 @@ export function Menu() {
     const handleNavigation = (path: string) => {
         setIsOpen(false);
 
-        if (path.startsWith('https://')) {
+        // Se for o currículo, abre em nova aba
+        if (path === '/CV2026Felipe2.pdf') {
             window.open(path, '_blank');
             return;
         }
@@ -81,13 +80,18 @@ export function Menu() {
             {isOpen && (
                 <div className={styles.menuMobile}>
                     {menuItems.map((item) => (
-                        <button
-                            key={item.path}
-                            onClick={() => handleNavigation(item.path)}
-                            className={styles.menuItem}
-                        >
-                            {item.name}
-                        </button>
+                        item.name == 'CV' ? (
+                            <></>
+                        ) : (
+                            <button
+                                key={item.path}
+                                onClick={() => handleNavigation(item.path)}
+                                className={styles.menuItem}
+
+                            >
+                                {item.name}
+                            </button>
+                        )
                     ))}
                 </div>
             )}
