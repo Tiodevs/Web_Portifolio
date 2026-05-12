@@ -1,24 +1,22 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import styles from './Menu.module.scss';
 import gsap from 'gsap';
 import { usePathname } from 'next/navigation';
 import { useLoadingState } from '../../hooks/useLoadingState';
+import { LINKEDIN_PROFILE_URL } from '@/lib/social';
 
 export function Menu() {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
-    const router = useRouter();
     const { isLoading } = useLoadingState();
 
     const menuItems = [
         { name: 'Home', path: '/home' },
         { name: 'Projetos', path: '/projetos' },
-        { name: 'CV', path: '/CV2026Felipe.pdf' },
+        { name: 'LinkedIn', path: LINKEDIN_PROFILE_URL },
         // { name: 'Blog', path: '/blog' },
     ];
 
@@ -36,8 +34,7 @@ export function Menu() {
     const handleNavigation = (path: string) => {
         setIsOpen(false);
 
-        // Se for o currículo, abre em nova aba
-        if (path === '/CV2026Felipe.pdf') {
+        if (path.startsWith('https://')) {
             window.open(path, '_blank');
             return;
         }
@@ -84,18 +81,13 @@ export function Menu() {
             {isOpen && (
                 <div className={styles.menuMobile}>
                     {menuItems.map((item) => (
-                        item.name == 'CV' ? (
-                            <></>
-                        ) : (
-                            <button
-                                key={item.path}
-                                onClick={() => handleNavigation(item.path)}
-                                className={styles.menuItem}
-
-                            >
-                                {item.name}
-                            </button>
-                        )
+                        <button
+                            key={item.path}
+                            onClick={() => handleNavigation(item.path)}
+                            className={styles.menuItem}
+                        >
+                            {item.name}
+                        </button>
                     ))}
                 </div>
             )}

@@ -21,25 +21,25 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Felipe Santos - Portfólio",
-  description: "Portfólio de Felipe Santos, desenvolvedor Full Stack especializado em React, Node.js e desenvolvimento web moderno.",
+  title: "Felipe P. dos Santos — Engenheiro de Software Full Stack",
+  description: "Engenheiro de Software Full Stack em Curitiba: web, cloud, IA e automação. React, Next.js, Node, AWS e entrega de produto com impacto mensurável.",
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: "Felipe Santos - Portfólio",
-    description: "Portfólio de Felipe Santos, desenvolvedor Full Stack especializado em React, Node.js e desenvolvimento web moderno.",
+    title: "Felipe P. dos Santos — Engenheiro de Software Full Stack",
+    description: "Engenheiro de Software Full Stack em Curitiba: web, cloud, IA e automação. React, Next.js, Node, AWS e entrega de produto com impacto mensurável.",
     images: [
       {
         url: '/capaLink.png',
         width: 1200,
         height: 630,
-        alt: 'Portfólio de Felipe Santos - Desenvolvedor Full Stack',
+        alt: 'Felipe P. dos Santos — Engenheiro de Software Full Stack',
       },
     ],
     url: "https://webcvfelipe.vercel.app/home",
     type: 'website',
-    siteName: "Felipe Santos - Portfólio",
+    siteName: "Felipe P. dos Santos — Portfólio",
   },
 };
 
