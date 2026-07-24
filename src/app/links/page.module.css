@@ -1,0 +1,270 @@
+.page {
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+  
+  .hidden {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .visible {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 40px;
+    border-radius: 24px;
+    background-color: var(--preto2);
+    border: 1px solid var(--cinza2);
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  /* ---------- Perfil ---------- */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--cinza2);
+    background-color: var(--preto);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .name {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--branco);
+    text-align: center;
+  }
+  
+  .role {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--cinza);
+    text-align: center;
+    margin-top: -4px;
+  }
+  
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  
+  .socials a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: var(--preto);
+    border: 1px solid var(--cinza2);
+    color: var(--cinza);
+    transition: all 0.3s ease;
+  }
+  
+  .socials a svg {
+    width: 19px;
+    height: 19px;
+  }
+  
+  .socials a:hover {
+    color: var(--main);
+    border-color: var(--main);
+    transform: translateY(-2px);
+  }
+  
+  /* ---------- Card em destaque ---------- */
+  .featured {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 170px;
+    border-radius: 18px;
+    overflow: hidden;
+    padding: 24px;
+    text-decoration: none;
+    border: 1px solid var(--cinza2);
+    background:
+      radial-gradient(120% 120% at 100% 0%, rgba(1, 222, 178, 0.28) 0%, rgba(1, 222, 178, 0) 55%),
+      linear-gradient(160deg, #14201d 0%, var(--preto) 90%);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .featuredOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0) 40%, rgba(10, 10, 10, 0.6) 100%);
+    pointer-events: none;
+  }
+  
+  .featuredContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1;
+  }
+  
+  .featuredTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--branco);
+  }
+  
+  .featuredSubtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--cinza);
+    line-height: 1.35;
+  }
+  
+  .featured:hover {
+    transform: translateY(-3px);
+    border-color: var(--main);
+    box-shadow: 0 12px 40px 0 rgba(1, 222, 178, 0.12);
+  }
+  
+  /* ---------- Lista de links ---------- */
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .linkCard {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background-color: var(--preto);
+    border: 1px solid var(--cinza2);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .linkIcon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid var(--cinza2);
+    background-color: var(--preto2);
+    color: var(--main);
+    transition: all 0.3s ease;
+  }
+  
+  .linkIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .linkText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  
+  .linkTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--branco);
+  }
+  
+  .linkSubtitle {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--cinza);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .linkArrow {
+    margin-left: auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cinza);
+    transition: all 0.3s ease;
+  }
+  
+  .linkArrow svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .linkCard:hover {
+    border-color: var(--main);
+    background-color: #141414;
+    transform: translateY(-2px);
+  }
+  
+  .linkCard:hover .linkArrow {
+    color: var(--main);
+    transform: translate(2px, -2px);
+  }
+  
+  .linkCard:hover .linkIcon {
+    border-color: var(--main);
+  }
+  
+  .copyright {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--cinza);
+    text-align: center;
+  }
+  
+  @media (max-width: 700px) {
+    .page {
+      margin-top: 100px;
+    }
+  
+    .card {
+      padding: 28px 22px;
+    }
+  
+    .name {
+      font-size: 22px;
+    }
+  }
