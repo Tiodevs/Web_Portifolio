@@ -15,7 +15,7 @@ export function Menu() {
     const menuItems = [
         { name: 'Home', path: '/home' },
         { name: 'Projetos', path: '/projetos' },
-        { name: 'CV', path: '/CV2026Felipe2.pdf' },
+        { name: 'CV', path: '/CV2026v3.pdf' },
     ];
 
     useEffect(() => {
@@ -33,7 +33,7 @@ export function Menu() {
         setIsOpen(false);
 
         // Se for o currículo, abre em nova aba
-        if (path === '/CV2026Felipe2.pdf') {
+        if (path === '/CV2026v3.pdf') {
             window.open(path, '_blank');
             return;
         }
@@ -48,6 +48,10 @@ export function Menu() {
         }
     };
 
+    // Não exibe o menu na página de links
+    if (pathname.startsWith('/links')) {
+        return null;
+    }
     // Se isLoading for true, retorna null
     if (isLoading) {
         return null;
