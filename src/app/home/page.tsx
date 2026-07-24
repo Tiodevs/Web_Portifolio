@@ -338,14 +338,14 @@ export default function Home() {
           />
         </div>
         <div className={styles.text}>
-          <h1 ref={titleRef}>Engenheiro de Software Full Stack</h1>
-          <p ref={textRef}>Web, cloud, IA e automação — de Curitiba para produtos que escalam. Construo aplicações performáticas, integro IA no fluxo de trabalho com foco em código limpo e seguro, e lidero entregas do desenho à operação com impacto mensurável no negócio.</p>
+          <h1 ref={titleRef}>Desenvolvedor Full Stack</h1>
+          <p ref={textRef}>Web, Cloud, IA & Automação — de Curitiba para produtos que escalam. Construo aplicações web de alta performance, lidero projetos da concepção ao suporte e integro IA no fluxo de trabalho de forma ética e sustentável, com foco em código limpo, seguro e impacto estratégico no negócio.</p>
 
           <a
             ref={buttonRef}
             className={styles.buttonheader}
-            href="/CV2026Felipe2.pdf"
-            download="CV2026Felipe2.pdf"
+            href="/CV2026v3.pdf"
+            download="CV2026v3.pdf"
           >
             <div style={{ position: 'relative', width: '100%', height: '100%' }}>
               <span
@@ -409,7 +409,6 @@ export default function Home() {
               { nome: "Next.js", imagem: "/icons/nextjs-original.svg", altImagem: "Next.js" },
               "Tailwind CSS",
               "GSAP",
-              { nome: "Figma", imagem: "/icons/figma-original.svg", altImagem: "Figma" },
             ]}
             habilidadeDestaque="Next.js"
           />
@@ -420,53 +419,43 @@ export default function Home() {
               { nome: "Express", imagem: "/icons/express-original.svg", altImagem: "Express" },
               { nome: "Prisma", imagem: "/icons/prisma-original.svg", altImagem: "Prisma" },
               { nome: "PostgreSQL", imagem: "/icons/postgresql-original.svg", altImagem: "PostgreSQL" },
-              "MongoDB / DocumentDB",
+              "MongoDB",
               "APIs REST",
-              "Autenticação & SSO",
+              "Autenticação",
               "DDD",
-              { nome: "Git", imagem: "/iconGit.svg", altImagem: "Git" },
-              { nome: "GitHub", imagem: "/iconGit.svg", altImagem: "GitHub" },
             ]}
             habilidadeDestaque="Node.js"
           />
           <HabilidadesList
-            titulo="Cloud, DevOps & dados"
+            titulo="Cloud & DevOps"
             habilidades={[
-              "AWS (S3, SQS, Lambda, EKS)",
+              "AWS (S3, SQS, Lambda)",
               { nome: "Docker", imagem: "/icons/docker-original.svg", altImagem: "Docker" },
               "CI/CD & Git Flow",
               { nome: "Vercel", imagem: "/icons/vercel-original.svg", altImagem: "Vercel" },
               { nome: "Railway", imagem: "/icons/railway-original.svg", altImagem: "Railway" },
-              "ArgoCD",
               "New Relic",
-              "Python (dados)",
+            ]}
+            habilidadeDestaque="AWS (S3, SQS, Lambda)"
+          />
+          <HabilidadesList
+            titulo="Automação & outros"
+            habilidades={[
+              "Make & n8n",
+              { nome: "Figma", imagem: "/icons/figma-original.svg", altImagem: "Figma" },
+              "Scrum",
               "Power BI",
             ]}
-            habilidadeDestaque="AWS (S3, SQS, Lambda, EKS)"
+            habilidadeDestaque="Make & n8n"
           />
           <HabilidadesList
-            titulo="Soft skills"
-            habilidades={[
-              "Comunicação clara",
-              "Pensamento analítico",
-              "Liderança técnica",
-              "Adaptabilidade",
-              "Escuta ativa e empatia",
-              "Gestão de tempo e prioridades",
-              "Mentalidade de produto",
-            ]}
-            habilidadeDestaque="Liderança técnica"
-          />
-          <HabilidadesList
-            titulo="IA, automação & processos"
+            titulo="IA & LLMs"
             habilidades={[
               "LangChain & RAG",
               "OpenAI SDK & Gemini",
               "Prompt engineering",
               "Gestão de memória / contexto",
               "GitHub Copilot",
-              "Make & n8n",
-              "Scrum",
             ]}
             habilidadeDestaque="LangChain & RAG"
           />
@@ -481,7 +470,7 @@ export default function Home() {
             empresa="Grupo Boticário"
             cargo="Engenheiro de Software Pleno"
             periodo="Jan 2026 — Atual"
-            descricao="Desenvolvimento Full Stack em PWA no App Super (gestão de mais de 2.000 colaboradores): decisões técnicas em React, Node.js, MongoDB/DocumentDB e SSO. Integração com DevOps para deploy e monitoramento na AWS (EKS, S3, ArgoCD, New Relic). A solução substituiu dezenas de planilhas manuais (horas, folgas, matriz de habilidades), com ganhos de cerca de 20% na produtividade dos coordenadores fabris e cerca de 10% menos tempo em alocação de equipes."
+            descricao="GenIA e reestruturação industrial: ponto focal na modernização do suporte fabril com IA generativa (RAG) para documentação técnica, dashboards de BI para a gestão e redesenho de processos (BPMN) com integrações de sistemas. Desenvolvimento Full Stack em PWA no App Super (gestão de mais de 5.000 colaboradores): decisões técnicas em React, Node.js, MongoDB/DocumentDB e SSO, com DevOps na AWS (EKS, S3, ArgoCD, New Relic). A solução substituiu dezenas de planilhas manuais, com cerca de 20% mais produtividade dos coordenadores fabris, 10% menos tempo em alocação de equipes e otimização de um custo operacional de R$ 63 milhões/ano."
           />
           <ExperienciaItem
             empresa="ASSUMTEK"
@@ -493,7 +482,7 @@ export default function Home() {
             empresa="Sentier"
             cargo="Fundador & Desenvolvedor Full Stack"
             periodo="Jan 2021 — Jan 2025"
-            descricao="Mais de 40 projetos B2B ponta a ponta: sistemas sob medida, landing pages, automações e BI. Destaque: plataforma SaaS multi-tenant para barbearias (agenda, folha, assinaturas, lembretes) com Next.js, Node, Prisma, AWS S3, Resend e Vercel — milhares de usuários cadastrados e economia de tempo estimada entre 17% e 20% na operação dos clientes."
+            descricao="Mais de 40 projetos B2B ponta a ponta: sistemas sob medida, landing pages, automações e BI. Destaque: plataforma SaaS multi-tenant para barbearias (agenda, folha, assinaturas, lembretes) com Next.js, Node, Prisma, AWS S3, Resend e Vercel — mais de 7.000 usuários cadastrados e economia de tempo estimada entre 17% e 20% na operação dos clientes."
             isLast
           />
           

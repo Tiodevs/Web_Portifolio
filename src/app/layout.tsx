@@ -20,20 +20,20 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Felipe P. dos Santos — Engenheiro de Software Full Stack",
-  description: "Engenheiro de Software Full Stack em Curitiba: web, cloud, IA e automação. React, Next.js, Node, AWS e entrega de produto com impacto mensurável.",
+  title: "Felipe P. dos Santos — Desenvolvedor Full Stack Pleno",
+  description: "Desenvolvedor Full Stack Pleno em Curitiba: web, cloud, IA e automação. React, Next.js, Node, AWS e entrega de produto com impacto mensurável.",
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: "Felipe P. dos Santos — Engenheiro de Software Full Stack",
-    description: "Engenheiro de Software Full Stack em Curitiba: web, cloud, IA e automação. React, Next.js, Node, AWS e entrega de produto com impacto mensurável.",
+    title: "Felipe P. dos Santos — Desenvolvedor Full Stack Pleno",
+    description: "Desenvolvedor Full Stack Pleno em Curitiba: web, cloud, IA e automação. React, Next.js, Node, AWS e entrega de produto com impacto mensurável.",
     images: [
       {
         url: '/capaLink.png',
         width: 1200,
         height: 630,
-        alt: 'Felipe P. dos Santos — Engenheiro de Software Full Stack',
+        alt: 'Felipe P. dos Santos — Desenvolvedor Full Stack Pleno',
       },
     ],
     url: "https://webcvfelipe.vercel.app/home",
